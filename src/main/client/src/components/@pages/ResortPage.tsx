@@ -5,6 +5,7 @@ import { RESORTS } from '../../content/resorts'
 import { COMMUNITIES } from '../../content/communities'
 import { CardListItem } from '../@commons/CardListItem'
 import { DataSheet } from '../@commons/DataSheet'
+import { Helmet } from 'react-helmet'
 
 type ResortPageProps = {}
 
@@ -13,7 +14,8 @@ export const ResortPage: React.FC<ResortPageProps> = () => {
   const resort = RESORTS.find((r) => r.id === params.name)
   if (!resort) return <Navigate to="/reszortok" />
   return (
-    <Page title="Reszortok">
+    <Page>
+      <Helmet title={resort.name} />
       <DataSheet organization={resort} />
       {COMMUNITIES.filter((c) => c.resortId === resort.id).map((community) => {
         return <CardListItem data={community} link={'/korok/' + community.id} />

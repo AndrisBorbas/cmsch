@@ -40,6 +40,7 @@ export const AchievementList: React.FC = (props) => {
     )
   return (
     <Page {...props} loginRequired>
+      <Helmet title="Bucketlist" />
       <Heading>Bucketlist</Heading>
       <Stack>
         {categories.length > 0 ? (

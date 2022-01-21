@@ -11,7 +11,7 @@ type IndexLayoutProps = {
 
 export const IndexLayout: React.FC<IndexLayoutProps> = ({ background, children }) => (
   <>
-    <Helmet titleTemplate="%s | GólyaKörTe" />
+    <Helmet titleTemplate="%s | GólyaKörTe" defaultTitle="GólyaKörTe" />
     <Flex direction="column" minHeight="100vh">
       <Navbar />
       <Box background={background} flex={1} pb={20}>

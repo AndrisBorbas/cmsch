@@ -4,6 +4,7 @@ import React from 'react'
 import { COMMUNITIES } from '../../content/communities'
 import { Navigate, useParams } from 'react-router-dom'
 import { DataSheet } from '../@commons/DataSheet'
+import { Helmet } from 'react-helmet'
 
 type CommunityPageProps = {}
 
@@ -12,7 +13,8 @@ export const CommunityPage: React.FC<CommunityPageProps> = () => {
   const community = COMMUNITIES.find((c) => c.id === params.name)
   if (!community) return <Navigate to="/korok" />
   return (
-    <Page title="Körök">
+    <Page>
+      <Helmet title={community.name} />
       <DataSheet organization={community} />
       {community.images?.map((url) => (
         <Image marginTop={5} src={url} alt="Körkép" borderRadius="lg" boxShadow="lg" />

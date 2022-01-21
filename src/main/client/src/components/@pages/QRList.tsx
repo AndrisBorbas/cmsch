@@ -11,6 +11,7 @@ import { ProfileDTO } from 'types/dto/profile'
 import { LinkButton } from '../@commons/LinkButton'
 import { Loading } from '../../utils/Loading'
 import { useServiceContext } from '../../utils/useServiceContext'
+import { Helmet } from 'react-helmet'
 
 export const QRList: React.FC = (props) => {
   const { throwError } = useServiceContext()
@@ -43,6 +44,7 @@ export const QRList: React.FC = (props) => {
 
   return (
     <Page {...props} loginRequired>
+      <Helmet title="QR page" />
       <Heading>QR kód vadászat</Heading>
       <Paragraph>
         A standoknál végzett aktív tevékenyégért QR kódokat lehet gyűjteni, amiket tanköri hiányzások igazolására lehet beváltani. TODO:
