@@ -8,6 +8,7 @@ import { AchievementCategory, AllAchievementCategories } from '../../types/dto/a
 import { AchievementCategoryItem } from '../@commons/AchievementCategoryItem'
 import { Loading } from '../../utils/Loading'
 import { useServiceContext } from '../../utils/useServiceContext'
+import { Helmet } from 'react-helmet'
 
 export const AchievementList: React.FC = (props) => {
   const [categories, setCategories] = useState<AchievementCategory[]>([])
