@@ -13,7 +13,7 @@ export const ResortPage: React.FC<ResortPageProps> = () => {
   const resort = RESORTS.find((r) => r.id === params.name)
   if (!resort) return <Navigate to="/reszortok" />
   return (
-    <Page>
+    <Page title="Reszortok">
       <DataSheet organization={resort} />
       {COMMUNITIES.filter((c) => c.resortId === resort.id).map((community) => {
         return <CardListItem data={community} link={'/korok/' + community.id} />
